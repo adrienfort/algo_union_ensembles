@@ -1,5 +1,5 @@
 def main():
-    file = open('pokemons')
+    file = open('documents/pokemons')
     lines = file.readlines()
     print(lines)
     return 0
