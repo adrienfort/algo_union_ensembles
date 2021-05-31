@@ -8,7 +8,7 @@ Vous pouvez le trouver [ici](https://primers.xyz/3) 👀
 
 #### Lancement 🚀
 
-`rm -f pokemons && ./algo > pokemons`
+`rm -f team && ./algo > team`
 
 #### Algorithme
 
