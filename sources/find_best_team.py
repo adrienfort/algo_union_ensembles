@@ -1,6 +1,6 @@
 # @params - nb_pokemons (int)
 #           team (int array)
-# Get the indexs of unchoosen pokemon.
+# Get the index of unchoosen pokemons.
 # @return - int array
 def get_options(nb_pokemons, team):
     options = []
