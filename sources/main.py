@@ -44,13 +44,13 @@ def get_pokemons_from_list(list_pokemons, nb_pokemons):
 # Build a tab filling by the number of uncommon attacks between two pokemons.
 # @return - array of int arrays
 def get_attacks_diff_tab(pokemons, nb_pokemons):
-    tab = [[0 for i in range(nb_pokemons)] for j in range(nb_pokemons)]
+    tab = [[-1 for i in range(nb_pokemons)] for j in range(nb_pokemons)]
     attacks_1 = []
     attacks_2 = []
 
     for row in range(nb_pokemons):
         attacks_1 = pokemons[row].attacks
-        for col in range(nb_pokemons):
+        for col in range(row, nb_pokemons):
             attacks_2 = pokemons[col].attacks
             if row == col:
                 tab[row][col] = -1
@@ -63,6 +63,7 @@ def get_attacks_diff_tab(pokemons, nb_pokemons):
 # Open and read the 'documents/pokemons' file.
 # Stock its lines in a list.
 # Build an array of Pokemons from the list.
+# Build union attacks int array.
 # Launch the algorithme and print its results.
 # @return - /
 def main():
@@ -79,7 +80,6 @@ def main():
     pokemons = get_pokemons_from_list(list_pokemons, nb_pokemons)
     attacks_tab = get_attacks_diff_tab(pokemons, nb_pokemons)
     team = find_best_team(pokemons, nb_pokemons, attacks_tab)
-    print(team)
-    # for i in range(6):
-    #     print(team[i])
+    for i in range(6):
+        print(pokemons[team[i]].name)
     return 0
