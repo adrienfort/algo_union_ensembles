@@ -98,9 +98,8 @@ def find_best_team(pokemons, nb_pokemons, attacks_tab):
     team_2 = []
 
     for row in range(nb_pokemons):
-        for col in range(nb_pokemons):
-            if row != col:
-                team_2 = get_best_team(attacks_tab, nb_pokemons, row, col)
-                if compare_teams(pokemons, team_1, team_2) > 0:
-                    team_1 = team_2.copy()
+        for col in range(row + 1, nb_pokemons):
+            team_2 = get_best_team(attacks_tab, nb_pokemons, row, col)
+            if compare_teams(pokemons, team_1, team_2) > 0:
+                team_1 = team_2.copy()
     return team_1
