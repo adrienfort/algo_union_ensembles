@@ -91,8 +91,8 @@ def compare_teams(pokemons, team_1, team_2):
 # @params - pokemons (Pokemons array),
 #           nb_pokemons (int)
 #           attacks_tab (array of int arrays)
-# Get the names of the pokemons in order to have the most complete team.
-# @return - str array
+# Get the index of the pokemons in order to have the most complete team.
+# @return - int array
 def find_best_team(pokemons, nb_pokemons, attacks_tab):
     team_1 = []
     team_2 = []
